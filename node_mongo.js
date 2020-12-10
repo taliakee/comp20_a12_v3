@@ -77,8 +77,8 @@ async function find_input(smethod, inputed)
 
 async function insert_find(smethod, inputed, response)
 {
-    // await insertdb();
-    // db.close();
+    await insertdb();
+    db.close();
     client = new MongoClient(dburl, { useUnifiedTopology: true});
     var output = await find_input(smethod, inputed);
     response.write(output);
